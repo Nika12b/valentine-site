@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine ❤️</title>
+<style>
+  body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px #b22222;
+  }
+  .btn {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .yes { background-color: #ff6b81; color: white; }
+  .no { background-color: #fff; color: #ff6b81; position: absolute; }
+</style>
+</head>
+<body>
+
+<h1>Do you like me? 💖</h1>
+<button class="btn yes" onclick="yesClicked()">Yes ❤️</button>
+<button class="btn no" id="noBtn">No 😢</button>
+
+<script>
+function yesClicked() {
+  alert("Yay! 💖 I knew it!");
+}
+
+// No button moves randomly
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
